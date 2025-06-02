@@ -1,0 +1,37 @@
+.text-block {
+  font-family: monospace;
+  font-size: clamp(14px, 4vw, 32px);
+  color: #374151;
+  line-height: 1.2; /* tambahkan line-height yang cukup */
+  display: inline-block; /* mencegah reflow teks */
+  white-space: pre-wrap; /* tetap wrap tapi konsisten */
+  word-break: break-word;
+}
+
+.char {
+  will-change: transform;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center; /* penting untuk menjaga posisi saat scale */
+  perspective: 500px; /* efek halus tambahan */
+}
+
+/* Hover hanya untuk desktop/touchpad */
+@media (hover: hover) and (pointer: fine) {
+  .char:hover {
+    transform: scale(1.05) rotate(3deg);
+  }
+}
+
+
+/* Tambahan efek hover pada karakter */
+.char:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .text-block {
+    font-size: clamp(12px, 3vw, 28px);
+  }
+}

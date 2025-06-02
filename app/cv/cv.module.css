@@ -1,0 +1,236 @@
+.wrapper {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6; /* soft gray */
+}
+
+.card {
+  background-color: #e5e7eb;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  z-index: 2;
+  min-height: 500px; /* dinaikkan sedikit untuk amankan fluktuasi kecil */
+  position: relative;
+  min-height: 500; /* Pastikan tinggi minimum */
+  min-width: 50%; /* Pastikan lebar minimum */
+  overflow: hidden; /* Cegah perubahan ukuran akibat animasi */
+  /* Cegah resize saat content berubah */
+  overflow: hidden;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827; /* dark gray for title */
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 1rem;
+  color: #374151; /* neutral text */
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.Dropdowncard {
+  position: absolute;
+  bottom: 20px; /* Sesuaikan supaya tetap stabil */
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5rem;
+}
+
+/* Dropdown Styles */
+.dropdownContent {
+  background-color: #f9fafb; /* very light gray */
+  color: #1f2937; /* dark text */
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+}
+
+.dropdownLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  color: #4b5563;
+}
+
+.dropdownSeparator {
+  border-top: 1px solid #e5e7eb;
+  margin: 0.25rem 0;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #1f2937;
+  transition: background 0.2s ease;
+  border-radius: 0.5rem;
+}
+
+.dropdownItem:hover {
+  background-color: #e5e7eb;
+}
+
+.dropdownItem:disabled {
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.dropdownLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dropdownSubContent {
+  background-color: #f3f4f6;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+}
+
+.dropdownTrigger {
+  background-color: #d1d5db;
+  color: #1f2937;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdownTrigger:hover {
+  background-color: #cbd5e1;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Sec 2 */
+.identitySection {
+  background-color: #2b4539;
+  color: white;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.identityCard {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #61b3dc;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+}
+
+.leftContent {
+  background-color: #61dca3;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-width: 300px;
+  text-align: center;
+}
+
+.leftContent img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  border: 4px solid #2b4539;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2b4539;
+}
+
+.rightContent {
+  flex: 2;
+  padding: 2rem;
+  background-color: #ffffff;
+  color: #2b4539;
+}
+
+.title {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #2b4539;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.details li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+.educationSD {
+  background-image: url('/images/sd.png'); /* background besar 1920x1080 */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    
+}
+.educationKLH {
+  background-image: url('/images/klh.png'); /* background besar 1920x1080 */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.educationContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.educationSMP {
+  background-image: url('/images/smp.png'); /* background besar 1920x1080 */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.educationSMK {
+  background-image: url('/images/smk.png'); /* background besar 1920x1080 */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}

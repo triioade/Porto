@@ -1,0 +1,119 @@
+.container {
+  max-width: 960px;
+  margin: 0 auto 2rem;
+  background-color: var(--card-ct-bg);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  color: var(--card-ct-text);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.titleSection {
+  background-color: var(--card-ct-bg);
+  color: var(--card-ct-title);
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 12px 12px 0 0;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 2rem auto 0;
+  max-width: 960px;
+  transition: all 0.3s ease-in-out;
+}
+
+.leftSide {
+  flex: 1;
+  min-width: 280px;
+  padding: 2rem;
+  background-color: var(--card-ct-bg);
+  border-right: 1px solid var(--card-ct-border);
+}
+
+.leftTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--card-ct-title);
+  margin-bottom: 1.5rem;
+}
+
+.infoItem {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.icon {
+  cursor: pointer;
+  color: var(--card-ct-title);
+  transition: color 0.3s;
+}
+
+.rightSide {
+  flex: 1;
+  min-width: 280px;
+  padding: 2rem;
+  background: var(--bg-ic-ct);
+}
+
+.rightTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--card-ct-title);
+  margin-bottom: 0.5rem;
+}
+
+.rightDesc {
+  color: var(--card-ct-text);
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input {
+  padding: 0.75rem;
+  border: 1px solid var(--card-ct-border);
+  border-radius: 6px;
+  background-color: transparent;
+  color: var(--card-ct-text);
+  font-size: 1rem;
+}
+
+.icon {
+  cursor: pointer;
+  color: var(--card-ct-title);
+  transition: color 0.3s;
+}
+
+.icon:hover {
+  color: var(--hvr-color);
+}
+
+.button {
+  background-color: var(--btn-ctcolor);
+  color: var(--btn-cttcolor);
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--hvr-color); /* Tambahkan var --btn-cthovercolor di :root, kalau mau */
+}

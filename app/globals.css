@@ -1,0 +1,516 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:wght@100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html,
+body {
+  width: 100%;
+  height: 100vh;
+}
+:root {
+  --bg-color: #1a2433;
+  --text-color: #e3eaf5;
+  --header-color: #202c40;
+  --ttnv-color: #d0e1ff;
+  --hvr-color: #12a8ff;
+  --txh1-color: #1fa2ff;
+  --txh2-color: #b2ddff;
+  --txp-color: #b0c6e0;
+  --btn-color: #ffffff; /* Warna Text btn */
+  --btn-bgcolor: #006bb6;
+  --bg-gradient-home: linear-gradient(to top, #1a2433, #1a2433);
+  --bg-gradient-about: linear-gradient(to top, #222a40, #1a2433);
+  --bg-gradient-skills: linear-gradient(to top, #183658, #222a40);
+  --text-velo: #b2ddff;
+  --card-bg: #223247;
+  --card-border: #2e3c53;
+  --card-title: #d0e1ff;
+  --card-text: #b0c6e0;
+  --accent: #3b82f6;
+  --bg-gradient-portfolio: linear-gradient(to top, #1e4471, #183658);
+  --card-new-bg: #243554; /* navy gelap agak biru */
+  --card-new-border: #375a9c; /* biru medium soft */
+  --card-new-title: #a3c1ff; /* biru muda terang */
+  --card-new-text: #8baad6; /* biru pastel lembut */
+  --card-new-accent: #4a90e2; /* biru cerah untuk aksen */
+  --card-new-btn-bg: #2f4a8b; /* tombol bg biru gelap */
+  --card-new-btn-text: #d9e4ff; /* teks tombol pucat */
+  --bg-gradient-contact: linear-gradient(to top, #284d7d, #1e4471);
+  --card-ct-bg: #1f2f46; /* biru gelap elegan */
+  --card-ct-border: #2f4463; /* biru abu medium */
+  --card-ct-title: #c5dcff; /* biru muda untuk judul */
+  --card-ct-text: #a3bdda; /* biru pastel untuk teks biasa */
+  --bg-ic-ct: #1a273a; /* sisi kiri: biru navy */
+  --btn-ctcolor: #3a8ef6; /* tombol: biru cerah */
+  --btn-cttcolor: #ffffff; /* teks tombol */
+}
+
+body.white-mode {
+  --text-color: #1e2a38;
+  --header-color: #a4c6e5;
+  --ttnv-color: #1e2a38;
+  --hvr-color: #5a8ab5;
+  --txh1-color: #005f99;
+  --txh2-color: #2b4c60;
+  --txp-color: #3c405b;
+  --btn-color: #ffffff;
+  --btn-bgcolor: #1d80c1;
+  --accent: #3b82f6;
+  --bg-gradient-home: linear-gradient(to top, #9bb9e3, #9bb9e3);
+  --bg-gradient-about: linear-gradient(to top, #6c9cd4, #9bb9e3);
+  --bg-gradient-skills: linear-gradient(to top, #3f7dbd, #6c9cd4);
+  --text-velo: #d1cece;
+  --card-bg: linear-gradient(135deg, #f5f8fc 0%, #a8c8ff 100%);
+  --card-border: #8ab0f0; /* biru soft untuk border */
+  --card-title: #586281;
+  --card-text: #454a73;
+  --bg-gradient-portfolio: linear-gradient(to top, #165fa7, #3f7dbd);
+  --card-new-bg: #d9e2ff; /* biru pastel cerah */
+  --card-new-border: #a7bbff; /* biru muda lembut */
+  --card-new-title: #364f82; /* navy gelap */
+  --card-new-text: #52658a; /* biru abu */
+  --card-new-accent: #375a9c; /* biru medium */
+  --card-new-btn-bg: #4a6fa9; /* tombol bg biru medium */
+  --card-new-btn-text: #f1f5ff; /* teks tombol putih pucat */
+  --bg-gradient-contact: linear-gradient(to top, #03045e, #165fa7);
+  --card-ct-bg: #9bb9e3; /* biru pucat bersih */
+  --card-ct-border: #c5d7ec; /* biru muda keabu */
+  --card-ct-title: #1c3a5f; /* biru navy terang */
+  --card-ct-text: #3f5e81; /* biru soft untuk teks */
+  --bg-ic-ct: #d6e8f8; /* sisi kiri: biru pastel */
+  --btn-ctcolor: #005f99; /* tombol: biru segar */
+  --btn-cttcolor: #d4cece; /* teks tombol */
+}
+
+body {
+  background: var(--bg-gradient-home);
+  color: var(--text-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Header & Navbar */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background: var(--header-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.navbar .logo h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar nav ul li {
+  margin-left: 2rem;
+}
+
+.navbar nav ul li a {
+  text-decoration: none;
+  color: var(--ttnv-color);
+  font-size: 1rem;
+  transition: color 0.3s;
+  font-weight: bold;
+}
+
+.navbar nav ul li a:hover {
+  color: var(--hvr-color);
+}
+
+/* Scroll Buttons */
+.scroll-buttons {
+  position: fixed;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.scroll-buttons button {
+  background: var(--btn-bgcolor);
+  border: none;
+  color: #fff;
+  padding: 0.8rem;
+  margin: 0.3rem 0;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--btn-bgcolor);
+  transition: background 0.3s;
+}
+
+.scroll-buttons button:hover {
+  background: var(--hvr-color);
+}
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 50%;
+  animation: pulseGlow 2.5s infinite ease-in-out;
+  box-shadow: 0 0 25px #00e5ff, 0 0 50px rgba(0, 229, 255, 0.3);
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 25px var(--txh1-color), 0 0 50px #00e5ff4d;
+  }
+  50% {
+    box-shadow: 0 0 45px var(--txh1-color), 0 0 90px #00e5ff80;
+  }
+  100% {
+    box-shadow: 0 0 25px var(--txh1-color), 0 0 50px #00e5ff4d;
+  }
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  height: 100vh;
+  padding-left: 5rem;
+}
+
+.hero-content {
+  flex: 1;
+  opacity: 0;
+  animation: slideInLeft 1.5s ease forwards;
+  padding-top: 15rem;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.hero-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: var(--txh1-color);
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+  color: var(--txh2-color);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--txp-color);
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  background-color: var(--btn-bgcolor);
+  color: var(--btn-color);
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 20px var(--btn-bgcolor);
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: var(--hvr-color);
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 1.5rem;
+}
+
+.social-icons a {
+  background-color: var(--btn-bgcolor);
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--btn-bgcolor);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #00e5ff;
+  color: #121212;
+  box-shadow: 0 0 20px #00e5ff;
+}
+
+/* Hero Image */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 50%;
+  animation: pulseGlow 2.5s infinite ease-in-out;
+  box-shadow: 0 0 25px var(--txh1-color), 0 0 50px rgba(0, 229, 255, 0.3);
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 25px var(--txh1-color), 0 0 50px #00e5ff4d;
+  }
+  50% {
+    box-shadow: 0 0 45px var(--txh1-color), 0 0 90px #00e5ff80;
+  }
+  100% {
+    box-shadow: 0 0 25px var(--txh1-color), 0 0 50px #00e5ff4d;
+  }
+}
+
+/* Section wrapper */
+.about-section {
+  height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: var(--bg-gradient-about); /* Tetap pakai gradasi darimu */
+  color: var(--text-color); /* Menggunakan var(--text-color) dari root */
+}
+
+/* Card container */
+.about-card {
+  background-color: var(
+    --header-color
+  ); /* Menggunakan var(--header-color) yang lebih gelap dan kalem */
+  color: var(--text-color); /* Menggunakan var(--text-color) dari root */
+  border-radius: 1rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 2rem 2rem 0rem 3rem;
+  max-width: 100%;
+}
+
+/* Judul About Me */
+.about-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--txh1-color); /* Gunakan var(--txh1-color) sesuai dengan warna heading */
+  padding-bottom: 0.5rem;
+  color: var(--txh1-color); /* Biru cerah */
+}
+
+/* Paragraf decrypted text */
+.about-text {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-family: monospace;
+  margin-bottom: 1.5rem;
+  color: var(--txp-color); /* Sesuaikan dengan warna teks kalem */
+}
+
+/* Timeline */
+.about-timeline {
+  margin-top: 1.5rem;
+}
+
+/* Profile photo container */
+.profile-photo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-photo img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 50%;
+  animation: pulseGlow 2.5s infinite ease-in-out;
+  box-shadow: 0 0 25px var(--txh1-color), 0 0 50px rgba(0, 229, 255, 0.3); /* Menyesuaikan dengan warna utama */
+}
+
+/* Pulse glow animation */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 25px var(--txh1-color), 0 0 50px #00e5ff4d;
+  }
+  50% {
+    box-shadow: 0 0 45px var(--txh1-color), 0 0 90px #00e5ff80;
+  }
+  100% {
+    box-shadow: 0 0 25px var(--txh1-color), 0 0 50px #00e5ff4d;
+  }
+}
+
+.events-content hr {
+  border: none;
+  border-top: 2px solid var(--txh1-color); /* Ganti warna dengan warna sesuai preferensi */
+  margin: 10px 0;
+}
+
+/* DecryptedText custom class overrides */
+.decrypted-text {
+  color: var(--about-text);
+}
+.decrypted-text-encrypted {
+  color: var(--txh1-color);
+}
+
+.decrypted-text2 {
+  color: var(--about-text);
+  font-family: "Noto Sans", sans-serif;
+}
+.decrypted-text-encrypted2 {
+  font-family: "Noto Sans", sans-serif;
+  color: var(--txh1-color);
+}
+
+/* pixel */
+.pixelated-image-card {
+  max-width: 300px;
+  margin: auto;
+}
+
+section#skills {
+  background: var(--bg-gradient-skills);
+  height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.containerSkills {
+  display: flex;
+  align-items: center; /* Mirip items-center */
+  justify-content: center; /* Mirip justify-center */
+  gap: 1.5rem;
+  padding-top: 2rem; /* Mirip gap-6 (biasanya 24px jika menggunakan Tailwind) */
+}
+
+section#portfolio {
+  background: var(--bg-gradient-portfolio);
+  height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+section#contact {
+  background: var(--bg-gradient-contact);
+  color: var(--text-color);
+  padding: 4rem 2rem;
+  min-height: 100vh;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
